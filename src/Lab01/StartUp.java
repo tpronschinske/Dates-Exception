@@ -24,7 +24,7 @@ public class StartUp {
        Invoice i = new Invoice();
        
         System.out.println(i.getInvoiceDate().getTime());
-        System.out.println(i.getChangedDueDate().getTime());
+        System.out.println(i.getNewDueDate().getTime());
         System.out.println(i.getDueDateToString());
 
 

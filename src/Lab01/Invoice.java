@@ -31,14 +31,14 @@ public class Invoice {
     }
 
 
-    public String getFormattedDate(){
+    public String getFormattedDateForInvoice(){
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yy HH:mm ");
         return dateFormat.format(getInvoiceDate().getTime());
     }
     
     
     
-    public Calendar getChangedDueDate(){
+    public Calendar getNewDueDate(){
         dueDate = invoiceDate;
         dueDate.add(Calendar.DATE, gracePeriod);
         return dueDate;

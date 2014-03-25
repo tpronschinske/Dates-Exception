@@ -23,7 +23,10 @@ public class StartUp {
         
         
         // having issues with the convertStringToCalendar
-        date = "December 10, 2014 12:00 AM";
+        // Format is now correct but still cant get the date i have to be outputed only does the current date and time stamp
+        
+        
+        date = "Dec 31, 2014 12:00 AM";
         dateService.convertStringToCalendar(date);
     
  

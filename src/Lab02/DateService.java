@@ -19,7 +19,7 @@ public class DateService {
     
     public final void convertStringToCalendar(String formattedDateString){
         Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy HH:mm a");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy h:mm a");
         try{
             Date date = calendar.getTime();
             calendar.setTime(dateFormat.parse(formattedDateString));
