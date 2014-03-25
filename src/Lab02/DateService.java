@@ -1,6 +1,6 @@
 /*
  * this class should have the ability to convert a date string to calendar and date
- *
+ * used default null pointer exception
  */
 
 package Lab02;
@@ -17,7 +17,10 @@ import java.text.ParseException;
 public class DateService {
     
     
-    public final void convertStringToCalendar(String formattedDateString){
+    public final void convertStringToCalendar(String formattedDateString)throws NullPointerException {
+        if(formattedDateString == null){
+            throw new NullPointerException("String formattedDateString can not be null");
+        }
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy h:mm a");
         try{
@@ -32,7 +35,11 @@ public class DateService {
         
     }
     
-    public final void convertStringToDate(String formattedDateString){
+    public final void convertStringToDate(String formattedDateString)throws NullPointerException {
+        if(formattedDateString == null){
+            throw new NullPointerException("String formattedDateString can not be null");
+        }
+        
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         try {
             Date date = dateFormat.parse(formattedDateString);
