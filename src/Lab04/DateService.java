@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *Brought in the Custom Exception with Throws and then after checking for null (throw new) in order to place in the message.
+ *
+ *
  */
 
 package Lab04;
@@ -16,7 +16,14 @@ import java.util.Date;
  * @author Travis
  */
 public class DateService {
-        public final void convertStringToCalendar(String formattedDateString){
+    
+        public final void convertStringToCalendar(String formattedDateString) throws CustomException {
+
+        if (formattedDateString == null) {
+           throw new CustomException("formattedDateString cant be null");
+        }
+
+            
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat dateFormat = new SimpleDateFormat("MMM dd, yyyy HH:mm a");
         try{
@@ -31,7 +38,11 @@ public class DateService {
         
     }
     
-    public final void convertStringToDate(String formattedDateString){
+    public final void convertStringToDate(String formattedDateString)throws CustomException {
+        
+        if(formattedDateString == null){
+            throw new CustomException("String formattedDateString cant be null");
+        }
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         try {
             Date date = dateFormat.parse(formattedDateString);
