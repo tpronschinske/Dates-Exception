@@ -8,7 +8,7 @@ package Lab04;
  *
  * @author Travis
  */
-public class CustomException extends Exception {
+public class CustomException extends IllegalArgumentException {
     
     
     public CustomException()
@@ -19,6 +19,12 @@ public class CustomException extends Exception {
         super(exceptionMessage);
     }
     
+    public CustomException(String exceptionMessage, Throwable cause){
+        super(exceptionMessage, cause);
+    }
     
+    public CustomException(Throwable cause){
+        super(cause);
+    }
     
 }
