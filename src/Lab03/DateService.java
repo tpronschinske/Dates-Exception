@@ -18,7 +18,7 @@ import java.util.Date;
 public class DateService {
       
     public final void convertStringToCalendar(String formattedDateString) throws NullPointerException {
-        if(formattedDateString == null){
+        if(formattedDateString == null || formattedDateString.length() < 1){
             throw new NullPointerException("String formattedDateString can not be null");
         }
         
@@ -29,7 +29,7 @@ public class DateService {
             calendar.setTime(dateFormat.parse(formattedDateString));
             System.out.println(dateFormat.format(date));
         } catch (ParseException parseException){
-            System.out.println("Format Not Accepted: Must Be In This Format (Month/day/year time (am or pm) EX: 12/10/1987 12:00 PM");
+            throw new NullPointerException("Format Not Accepted: Must Be In This Format (Month/day/year time (am or pm) EX: 12/10/1987 12:00 PM");
             
         }
         
@@ -37,7 +37,7 @@ public class DateService {
     }
     
     public final void convertStringToDate(String formattedDateString)throws NullPointerException {
-        if(formattedDateString == null){
+        if(formattedDateString == null|| formattedDateString.length() < 1){
             throw new NullPointerException("String formattedDateString can not be null");
         }
         
@@ -46,7 +46,7 @@ public class DateService {
             Date date = dateFormat.parse(formattedDateString);
             System.out.println(dateFormat.format(date));
         } catch (ParseException parseException) {
-            System.out.println("Format Not Accepted: Must Be Month/Day/Year (12/10/1987)");
+           throw new NullPointerException("Format Not Accepted: Must Be Month/Day/Year (12/10/1987)");
         }
                 
         
